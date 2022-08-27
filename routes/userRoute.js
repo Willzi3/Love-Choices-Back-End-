@@ -32,21 +32,21 @@ router.get("/", (req, res) => {
     }
   });
   
-  // Add new users
+  // Add new post
   router.post("/", (req, res) => {
     // the below allows you to only need one const, but every input required is inside of the brackets
     const {
-      email,
-      password,
-      full_name,
-      phone,
-      user_type,
-      birth_date,
-      gender,
-      marital_status,
-      occupation,
-      address,
-      description,
+      // email,
+      // password,
+      // full_name,
+      // phone,
+      // user_type,
+      // birth_date,
+      // gender,
+      // marital_status,
+      // occupation,
+      // address,
+      // description,
       image
     } = req.body;
     // OR
@@ -55,18 +55,9 @@ router.get("/", (req, res) => {
     try {
       con.query(
         //When using the ${}, the content of con.query MUST be in the back tick
-        `INSERT INTO users (email,
-            password,
-            full_name,
-            phone,
-            user_type,
-            birth_date,
-            gender,
-            marital_status,
-            occupation,
-            address,
-            description,
-            image) VALUES ("${email}", "${password}", "${full_name}", "${phone}", "${user_type}", "${birth_date}", "${gender}", "${marital_status}", "${occupation}", "${address}", "${description}", "${image}")`,
+        `INSERT INTO users (
+          
+            image) VALUES ("${image}")`,
         (err, result) => {
           if (err) throw err;
           res.send(result);
