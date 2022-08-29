@@ -194,7 +194,7 @@ router.get("/", (req, res) => {
             result[0].password
           );
           if (!isMatch) {
-            res.send("Password incorrect");
+            alert("Password incorrect");
                 } else {
                   // The information the should be stored inside token
                   const payload = {
